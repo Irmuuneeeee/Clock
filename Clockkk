@@ -1,0 +1,27 @@
+GraphicsWindow.Title="Mongolia clock"
+Timer.Interval=1000
+Timer.Tick =ontick
+Sub ontick
+    GraphicsWindow.Clear()
+    GraphicsWindow.FontSize=50
+    mongoliahour = clock.hour+8
+    If mongoliahour>24 then
+        mongoliahour= mongoliahour-24
+        EndIf
+        if clock.minute>9 then
+            If clock.second>9 Then
+                GraphicsWindow.DrawText(0, 0, mongoliahour+":"+clock.minute+":"+Clock.Second)
+            else
+                GraphicsWindow.DrawText(0, 0, mongoliahour+":"+clock.minute+":0"+Clock.Second)
+            EndIf
+            Else
+                if clock.second>9 then
+                    GraphicsWindow.DrawText(0, 0, mongoliahour+":"+clock.minute+":"+Clock.Second)
+                else
+                    GraphicsWindow.DrawText(0, 0, mongoliahour+":"+clock.minute+":0"+Clock.Second)
+                    EndIf
+                    
+                    EndIf
+                    GraphicsWindow.FontSize=40
+                    GraphicsWindow.DrawText(0, 50, clock.weekday+""+Clock.date)
+            EndSub
